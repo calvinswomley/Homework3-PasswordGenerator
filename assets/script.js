@@ -7,7 +7,7 @@ var specialcharacterOption;
 var numberOption;
 var lowercaseOption;
 var uppercaseOption;
-var passwordText = "x"
+var passwordText = ""
 
 // Write password to the #password input
 // Password length prompt
@@ -90,7 +90,7 @@ function writePassword() {
   console.log(lengthOption2)
   
   //function generatePassword() {
-    for (var i = 0; i < lengthOption2; i++) {
+    for (; !(passwordText.length === lengthOption2); ) {
       var optionSelector = getRandomIntInclusive();
       getRandomIntInclusive();
         function getRandomIntInclusive(min, max) {
@@ -100,6 +100,9 @@ function writePassword() {
             }
         console.log(optionSelector)
       if (optionSelector == 1) {
+        if (numberOption === "N") {
+          continue;
+        }
         var numberSelector = getRandomIntInclusive();
         getRandomIntInclusive();
         function getRandomIntInclusive(min, max) {
@@ -111,6 +114,9 @@ function writePassword() {
             console.log(passwordText)
             continue;
       } else if (optionSelector == 2) {
+        if (specialcharacterOption === "N") {
+          continue;
+        }
         var speccharSelector =  randomSpecChar();
         randomSpecChar();
           function randomSpecChar () {
@@ -121,6 +127,9 @@ function writePassword() {
             console.log(passwordText)
             continue;
       } else if (optionSelector == 3) {
+        if (uppercaseOption === "N") {
+          continue;
+        }
         var uppercaseSelector = randomUpperCaseLetter();
         randomUpperCaseLetter();
           function randomUpperCaseLetter () {
@@ -131,6 +140,9 @@ function writePassword() {
             console.log(passwordText)
             continue;
           } else if (optionSelector == 4) {
+            if (lowercaseOption === "N") {
+              continue;
+            }
             var lowercaseSelector = randomLowerCaseLetter();
             randomLowerCaseLetter();
               function randomLowerCaseLetter () {
@@ -150,9 +162,6 @@ function writePassword() {
     //var passwordText = document.querySelector("#password");
   
     //var password = generatePassword();
-  
-    console.log(passwordText.value)
-    console.log("Password criteria collected: " + " lengthOption: " + lengthOption + " specialcharacterOption: " + specialcharacterOption + " numberOption: " + numberOption + " uppercaseOption: " + uppercaseOption + " lowercaseOption: " + lowercaseOption)
 
   }
   console.log("Password has been generated.")
