@@ -19,7 +19,7 @@ function writePassword() {
     return;
   } else {
       window.confirm("Must be numeric whole number between 8 and 128.")
-      writePassword()
+      return writePassword();
   };
   
   //Special characters option prompt
@@ -30,7 +30,7 @@ function writePassword() {
       return;
   } else {
     window.confirm("Value must be Y or N.")
-    writePassword()
+    return writePassword();
   };
 
   //Numeric characters prompt
@@ -41,7 +41,7 @@ function writePassword() {
     return;
   } else {
     window.confirm("Value must be Y or N.")
-    writePassword()
+    return writePassword();
   };
 
 
@@ -53,7 +53,7 @@ function writePassword() {
     return;
   } else {
     window.confirm("Value must be Y or N.")
-    writePassword()
+    return writePassword();
   };
 
   // Lowercase characters prompt
@@ -64,7 +64,7 @@ function writePassword() {
     return;
   } else {
     window.confirm("Value must be Y or N.")
-    writePassword()
+    return writePassword();
   };
 
   //Converting string to integer
@@ -139,9 +139,9 @@ function writePassword() {
       }
     }
   //Displays password in HTML viewable to the user
+  
   document.getElementById("password").innerHTML = passwordText;
 };
 
 //Event listener that triggers writePassword function upon click of the generate password button
 generateBtn.addEventListener("click", writePassword);
-
